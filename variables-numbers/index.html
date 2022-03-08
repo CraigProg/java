@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log("Hello, World!")
+
+        let message;
+        message = 'Hello There!';// store the string "Hello" in the variable named message
+
+        alert(message); //shows the variable content
+
+        let message1 = 'Hi!'; //here you can define the variable AND assign value
+        let user = 'John', age= 25, message4 = 'Hello'; //here we can define and assign multiple variables in one line, though single line is recommended
+
+        var message2 = 'Hello 2'; //var and let have slight differences
+
+        let message3;
+        message3 = 'Hello';
+        message3 = 'World';
+        alert(message3);
+        //by changing the variable, it will be the last thing it was
+
+        let message5 = 'Hello World!';
+        let message6;
+        message6 = message5;
+
+        alert(message6);
+        //you can make a variable equal a different variable
+
+        let myLongUserName //this is called camelCase, where in multiword variables you capitalize the first letter of each word except the first word
+        
+        let _ = 1;
+        let $ = 2;
+        alert($ + _); //you can also use _ and $ for names
+
+        //let let = 5; will not work. there is a list of unallowed variable names, "let" being one of them
+
+        const MY_BIRTHDAY = '06.21.1991' //use const instead of let for a variable that will never change
+        //myBirthday = '05.01/1994' would result in error, you are not able to change a const
+
+        const COLOR_RED = '#F00'; //it is common practice for const variables to be named using uppercase and underscores when the value is known.
+        const COLOR_GREEN = '0F0';
+
+        let color = COLOR_RED; //use let to assign a variable to the constant that can potentially be changed
+        alert(color);
+
+        //const pageLoadTime =//it is common practice to still use usual casing for constants that we do not know ahead of time
+
+        let admin;
+        let name;
+        name = 'John';
+        admin = name;
+        alert(admin);
+
+        let ourPlanetName = 'Earth';
+        let currentUserName = 'John';
+
+        let x = 5;
+        x++;
+        let z = x;
+        z++;
+        let y = z;
+        alert(y); //++ just adds 1. use -- to subtract 1
+        //other math notation: ** is like ^ for exponents. x^y. x**2 can also be written in math code Math.pow(x,2). x % y gives remainder of x/y
+
+        let a = 999999999999999;
+        let b = 9999999999999999; //x will be exact, y will round up to 10000... integers are only accurate to 15 digits.
+
+        let j = 0.2 + 0.1; 
+        alert(j); //floating point integers aren't always accurate. instead multiply by 10x as so
+        let k = ((0.2*10)+(0.1*10))/10;
+        alert(k); //by turning decimals into integers first, they add more accurately
+
+        //adding strings and numbers
+        let d = "10";
+        let e = "20";
+        let f = d + e;
+        alert(f); //this will add them as strings, resulting in 1020.
+
+        let g = 10;
+        let h = "20";
+        let i = g + h;
+        alert(i); //also results in string concatenation
+
+        let l = 10;
+        let m = 20;
+        let n = '30';
+        let o = l + m + n;
+        alert(o); //since java works left to right, top to bottom. It will add 10 and 20 as the integers to be 30, the combine that 30 with the string 30 to get a string concatenation of 3030
+        
+        let x1 = "100";
+        let y1 = "10";
+        let z1 = x1 / y1;
+        alert(z1); //java will attempt to tanslate any all number strings to do math, but can only do with - / and *. + is used to concatenate strings (would get 10010)
+
+        let a1 = 100 / 'Apple';
+        alert(isNaN(a1)); //this returns true because a1 is not a number (NaN)
+
+        let myNumber = 2;
+        while (myNumber != Infinity) {
+            myNumber = myNumber * myNumber;
+        }
+        alert(myNumber); //returns infinity because we ran equatation until it is too big (Over 17 digits). Dividing by 0 also returns Infinity
+
+        let myNumber2 = 32;
+        myNumber3 = myNumber2.toString(32);
+        alert(myNumber3); //.toString(#) changes number to that # base
+
+        let num1 = 3;
+        let num2 = 5;
+        alert(num1==num2); //x==y will return true or false. == means are they equal? === means are they not equal? Comparing Java objects always gives False
+
+        let num3 = "5";
+        let num4 = "7";
+        let num5 = +num3;
+        let num6 = +num4;
+        alert(num5+num6);
+    </script>
+</body>
+</html>
