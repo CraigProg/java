@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>Press Me</button>
+    <script>
+
+        //-------STRINGS-----------
+        const string = 'The revolution will not be televised.';
+        console.log(string);
+        const string1 = 'I\'ve got no right to take my place'; //use\ with the quote if you don't want to close the string
+        const name = 'Chris';
+        const greeting = `Hello, ${name}`;
+        console.log(greeting);
+        //If you want to concatenate strings which are variables, you would use a different
+        //type of string called a template literal, using backticks (`) instead of quotes
+        //you can quote a string variable using ${variableName} within a template literal
+        const button = document.querySelector('button');
+
+        function greet() {
+            const name = prompt('What is your name?');
+            alert(`Hello ${name}, nice to see you!`)
+        }
+
+        button.addEventListener('click', greet);
+
+        const myNum2 = 123;
+        const myString2 = myNum2.toString(); //shorthand to turn number into string
+
+        const song = 'Fight the Youth';
+        const score = 9;
+        const highestScore = 10;
+        const output = `I like the song ${song}. I gave it a score of ${score/highestScore * 100}%.`;
+        console.log(output);  // "I like the song Fight the Youth. I gave it a score of 90%."
+        //when using numbers, you can do math within ${} function
+
+        const multiline = `I like the song.
+        I have it a score of 90%` //This will result in a two line output, as template literal will respect line breaks in code
+        const multiline2 = 'I like the song.\nI have it a score of 90%'//use \n for line breaks in normal strings
+        
+        let txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        let length = txt.length;
+        console.log(length); //.length will return length of string
+        //Extracting parts of Strings
+        let str = "Apple, Banana, Kiwi";
+        let part = str.slice(7, 13);
+        console.log(part); //this takes out everything before the first number, and everything from last number to after
+        let part2 = str.slice(-12, -6);
+        console.log(part2); //goes back from the end, taking out everything from before the first number and from second number after
+        let part3 = str.slice(7);
+        console.log(part3); //slices off everything before 7
+        let part4 = str.substring(7, 13);
+        console.log(part4); //substring is same as slice but cannot accept negative indexes.
+        let part5 = str.substr(7, 6);
+        console.log(part5); //substr is like slice but the second parameter is the length of what you want to extract
+        //so this will extract the 6 characters from 7 on. substr can also accept negative parameters
+
+        let text = 'Please visit Microsoft!';
+        let newText = text.replace("Microsoft", "W3Schools");
+        console.log(newText); //.replace will replace the first instance of the first parameter with the secon parameter.
+        //it creates a new string, and does not actually change the original string. This is CASE SENSITIVE
+        let newText2 = text.replace(/MICROSOFT/i, "W3Schools");
+        console.log(newText2); //using the string/i makes the search case insensitive
+        let text2 = 'Please visit Microsoft and Microsoft';
+        let newText3 = text2.replace(/Microsoft/g, "W3 Schools");
+        console.log(newText3); //using string/g replaces ALL instances of the parameter.
+
+        let text3 = "Hello World!";
+        let text4 = text3.toUpperCase(); //use this to convert string to upper case. use .toLowerCase for lower
+
+        let text5 = "Hello";
+        let text6 = "World";
+        let text7 = text5.concat(" ", text6);
+        console.log(text7); //results in "Hello World". Use .concat to combine strings
+        //can add as many parameters as you want and combine as many as you want.
+
+        let text8 = "        Hello World!       ";
+        let text9 = text8.trim();
+        console.log(text9);//Results in Hello World, .trim removes whitespaces from both sides of string
+        
+        let text10 = "55";
+        let padded = text10.padStart(4,2);
+        console.log(padded); //padStart will pad the start of variable with 2s until it is 4 characters long
+        //can also pad end of variable with padEnd(x, y)
+
+        let text11 = "HELLO WORLD";
+        let char = text11.charAt(0);
+        console.log(char); //returns the character at index 0
+        let char2 = text11.charCodeAt(0); //returns character at 0 index in UTF-16 code
+        console.log(char2);
+        let char3 = text11[0];
+        console.log(char3); //[] basically same as charAt but can give errors.
+
+        let text12 = "This sentence, has a lot, of commas, in it";
+        let array = text12.split(",");
+        console.log(array);//.split will split a string based on the given character
+        //.split("") would return array of single characters
+    </script>
+</body>
+</html>

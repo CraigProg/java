@@ -66,6 +66,7 @@
         let y = z;
         alert(y); //++ just adds 1. use -- to subtract 1
         //other math notation: ** is like ^ for exponents. x^y. x**2 can also be written in math code Math.pow(x,2). x % y gives remainder of x/y
+        //x *= y is equal to x = x*y
 
         let a = 999999999999999;
         let b = 9999999999999999; //x will be exact, y will round up to 10000... integers are only accurate to 15 digits.
@@ -118,7 +119,7 @@
         let num4 = "7";
         let num5 = +num3;
         let num6 = +num4;
-        alert(num5+num6);
+        alert(num5+num6); //use +variable to translate string to number. alternative is let num5 = Number(num3)
     </script>
 </body>
 </html>
