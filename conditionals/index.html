@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //—----------Boolean conditionals—---------
+
+//Comparing two variables will return True or false
+alert( 2 > 1); //returns True
+alert (2 < 1);//returns false
+//other comparisons are == (equals), != (does not equal)
+
+//when comparing strings, basically the later a word would be in the dictionary, the greater it is
+alert( 'Bet' > 'Ben'); //returns true. Also worth noting, lower case is greater than uppercase
+
+//Comparing different types
+alert( '2' > 1 );//returns True, as it converts the string to a number
+alert( '01' == 1);//returns true as it translates the string to integer of 1
+//for boolean values, true = 1 and false = 1
+alert( true == 1);//true
+alert( false == 0);//true
+
+//strict equality. Problem is java cannot differentiate 0 from false
+alert( 0 == false ); // true
+alert( '' == false ); // true
+// we use === as a strict equality operator, which will not change type
+alert(0 === false); //returns false, since false and 0 are different types
+// there is also a strict non-equality operator !== similar to =
+//null and undefined are only equal to each other, but are not the same type
+alert( null === undefined ); // false
+alert( null == undefined ); // true
+//when using null and undefined for comparisons, they become numbers. Where null is 0 and undefined is NaN
+
+alert( null > 0 );  // (1) false
+alert( null == 0 ); // (2) false
+alert( null >= 0 ); // (3) true
+
+//null will never exactly = 0, but will return true if asked if >=
+
+//—------If Statements —-------
+
+let x=5;
+if (x>3) {
+message = 'Your number is greater than 3';
+} else {
+message = "Your number is not greater than 3";}
+let time = 22;
+if (time < 10) {
+  greeting = "Good morning";
+} else if (time < 20) {
+  greeting = "Good day";
+} else {
+  greeting = "Good evening";
+} //returns "Good Evening”
+
+//different boolean values
+//—-------- || OR. if at least one thing in an OR is true, then it is true
+alert( true || true );   // true
+alert( false || true );  // true
+alert( true || false );  // true
+alert( false || false ); // false
+
+if (1 || 0) { // works just like if( true || false )
+  alert( 'truthy!' );
+}//returns truthy!
+
+let hour = 9;
+
+if (hour < 10 || hour > 18) {
+  alert( 'The office is closed.' );
+}//returns "The office is closed”
+
+let hour1 = 12;
+let isWeekend = true;
+
+if (hour1 < 10 || hour1 > 18 || isWeekend) {
+  alert( 'The office is closed.' ); // it is the weekend
+}
+
+//result = value1 || value2 || value3;
+//OR evaluates left to right, the first one that returns as true, the original value is returned. If none are true, the last value is returned
+
+alert( 1 || 0 ); // 1 (1 is truthy)
+
+alert( null || 1 ); // 1 (1 is the first truthy value)
+alert( null || 0 || 1 ); // 1 (the first truthy value)
+
+alert( undefined || null || 0 ); // 0 (all falsy, returns the last value)
+
+let firstName = "";
+let lastName = "";
+let nickName = "SuperCoder";
+
+alert( firstName || lastName || nickName || "Anonymous"); // SuperCoder
+
+true || alert("not printed");
+false || alert("printed");
+//only the second prints because first stops at true. Good for trying to run a command only if first value is false
+
+//—------ && AND
+
+alert( true && true );   // true
+alert( false && true );  // false
+alert( true && false );  // false
+alert( false && false ); // false
+//in this case, all conditions need to be true to return true
+
+if (1 && 0) { // evaluated as true && false
+  alert( "won't work, because the result is falsy" );
+}
+
+//result = value1 && value2 && value3
+//this does opposite of OR and returns the first FALSE value. Or the last value if all are true
+
+// if the first operand is truthy,
+// AND returns the second operand:
+alert( 1 && 0 ); // 0
+alert( 1 && 5 ); // 5
+
+// if the first operand is falsy,
+// AND returns it. The second operand is ignored
+alert( null && 5 ); // null
+alert( 0 && "no matter what" ); // 0
+
+//worth nothing that && takes precedence over ||
+
+//—----------! NOT
+alert( !true ); // false
+alert( !0 ); // true
+
+alert( !!"non-empty string" ); // true
+alert( !!null ); // false
+//use ! for double negation, but this can also be done with Boolea function
+
+alert( Boolean("non-empty string") ); // true
+alert( Boolean(null) ); // false
+
+//—-- SWITCH STATEMENTS
+// switch statements are like if statements, just with multiple possible ranges
+
+// this sets day to a number corresponding to day f the week
+const day = new Date().getDay();
+
+switch (day) {
+case 0:
+console.log('It is Sunday');
+break;
+case 1:
+console.log('It is Monday');
+break;
+case 2:
+console.log('It is Tuesday');
+break;
+case 3:
+console.log('It is Wednesday');
+break;
+case 4:
+console.log('It is Thrusday');
+break;
+case 5:
+console.log('It is Friday');
+break;
+case 6:
+console.log('It is Saturday');
+break;
+default:
+console.log('Something went wrong');
+break;}
+
+//this switch takes the variable in parentheses and compares it to case. Once it matches, it executes that code.
+
+// Set the student's grade
+const grade = 87;
+
+switch (true) {
+	// If score is 90 or greater
+	case grade >= 90:
+		console.log("A");
+		break;
+	// If score is 80 or greater
+	case grade >= 80:
+		console.log("B");
+		break;
+	// If score is 70 or greater
+	case grade >= 70:
+		console.log("C");
+		break;
+	// If score is 60 or greater
+	case grade >= 60:
+		console.log("D");
+		break;
+	// Anything 59 or below is failing
+	default:
+		console.log("F");
+} //B
+
+
+//since we are comparing the potential grade, it will result in a boolean value, which we will compare to whats in the parentheses (true) therefore it will execute the true line of code
+
+
+// Get number corresponding to the current month, with 0 being January and 11 being December
+const month = new Date().getMonth();
+
+switch (month) {
+	// January, February, March
+	case 0:
+	case 1:
+	case 2:
+		console.log("Winter");
+		break;
+	// April, May, June
+	case 3:
+	case 4:
+	case 5:
+		console.log("Spring");
+		break;
+	// July, August, September
+	case 6:
+	case 7:
+	case 8:
+		console.log("Summer");
+		break;
+	// October, November, December
+	case 9:
+	case 10:
+	case 11:
+		console.log("Autumn");
+		break;
+	default:
+		console.log("Something went wrong.");
+}
+
+    </script>
+</body>
+</html>
