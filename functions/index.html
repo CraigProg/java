@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="textBox" type="text"></input>
+    <div id="output"></div>
+    <script>
+        function random(number) {
+            return Math.floor(Math.random()*number);
+        }
+        num = prompt('Give a number');
+        let rando = random(num);
+        alert(rando);
+        //the built in Math.random function returns a decimal between 0 and 1.
+        //by multiplying it by given "number" it will return random number betwen 0 and the number
+
+        function sayHello() {
+            alert('Hello!')
+        }
+        sayHello();
+        //call the function simply by typing it. If the function expects parameter(s), put it in the ()
+
+        const myArray = ['I', 'love', 'chocolate', 'frogs'];
+        const madeAString = myArray.join(' ');
+        console.log(madeAString);
+        // some functions have optional parameters, such as join(). The parameter within join() will decided
+        // what goes between the strings being joined. This example returns 'I love chocolate frogs'
+
+        const madeAnotherString = myArray.join();
+        console.log(madeAnotherString);
+        // This example returns 'I,love,chocolate,frogs' because if given no parameter, it will by default separate with a comma
+
+        function hello(name='Craig') {
+            alert(`Hello ${name}!`);
+        }
+        hello('Bill'); // Hello Bill!
+        hello(); // Hello Craig!
+        //to create a default parameter, just put =yourDefaultParameter after the given parameter
+
+        
+        /*addEventListener('keydown', function(event) {
+            console.log(`You pressed "${event.key}".`);
+        });*/
+        // this uses whats called an anonymous function. Examples to use one include here where the parameter
+        // of the function will be an input and the result of the function will be a parameter within a different function
+        const textBox = document.querySelector("#textBox");
+        const output = document.querySelector('#output');
+        textBox.addEventListener('keydown', (event) => output.textContent = `You pressed "${event.key}".`);
+        //this is an alternative way of writing this function, using => instead of an anonymous function
+        const originals = [1, 2, 3];
+        const doubled = originals.map(item => item * 2);
+        console.log(doubled); // [2, 4, 6]
+        //another example of using =>
+
+    </script>
+
+</body>
+</html>
